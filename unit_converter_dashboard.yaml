@@ -1,0 +1,11 @@
+title: Unit Converter
+views:
+  - title: Converter
+    cards:
+      - type: entities
+        title: Conversion Controls
+        entities:
+          - input_number.convert_value
+          - input_text.convert_from
+          - input_text.convert_to
+          - script.run_unit_converter
