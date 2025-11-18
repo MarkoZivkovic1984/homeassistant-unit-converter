@@ -1,0 +1,8 @@
+pyscript:
+  allow_all_imports: true
+  hass_is_global: true
+
+logger:
+  default: info
+  logs:
+    custom_components.pyscript: debug
