@@ -18,13 +18,11 @@ Clone the repository:
 
 git clone https://github.com/MarkoZivkovic1984/homeassistant-unit-converter.git
 
-Install dependencies:
+Used Pyscript inside the Home Assistant
 
-pip install -r requirements.txt
+import Pint as requierement
 
-Run the application:
-
-python converter.py
+add yaml configurations that are provided
 
 Example:
 
