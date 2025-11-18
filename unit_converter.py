@@ -22,7 +22,7 @@ merne_Kategorije = {
     "Farenhajt": "degF",
 }
 
-@service
+@service                                                           #noqa
 def unit_converter(value=None, from_unit=None, to_unit=None):
     raw_value = state.get("input_number.convert_value_2")
     log.info(f"RAW HA input_number value: {raw_value!r}")
@@ -31,16 +31,16 @@ def unit_converter(value=None, from_unit=None, to_unit=None):
             value = float(state.get('input_number.convert_value_2'))
     except:
         log.error("Ubaci kolicinu (invalid number).")
-        state.set("sensor.unit_converter_internal", "error")
+        state.set("sensor.unit_converter_internal", "error")       #noqa
         return
 
     if not from_unit:
-        from_unit = state.get("input_select.convert_from_unit")
+        from_unit = state.get("input_select.convert_from_unit")     #noqa
     if not to_unit:
-        to_unit = state.get("input_select.convert_to_unit")
+        to_unit = state.get("input_select.convert_to_unit")         #noqa
     if not from_unit or not to_unit:
         log.error("Ubacite merne jedinice.")
-        state.set("sensor.unit_converter_internal", "error")
+        state.set("sensor.unit_converter_internal", "error")         #noqa
         return
 
     # Conversion
@@ -51,7 +51,7 @@ def unit_converter(value=None, from_unit=None, to_unit=None):
 
         log.info(f"{value} {from_unit} = {result:.2f} {to_unit}")
         # Set virtual sensor
-        state.set("sensor.unit_converter_internal", f"{result:.2f}")
+        state.set("sensor.unit_converter_internal", f"{result:.2f}")  #noqa
 
     except Exception as e:
         for _ in str(e):
@@ -65,4 +65,4 @@ def unit_converter(value=None, from_unit=None, to_unit=None):
             else:
                 log.error(f"Greska: {e}")
                 _ = e
-            state.set("sensor.unit_converter_internal", _)
+            state.set("sensor.unit_converter_internal", _)              #noqa
